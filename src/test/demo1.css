@@ -1,0 +1,11 @@
+.title {
+  color: aqua;
+  background-color:black ;
+  margin:5px;
+  padding: 5px;
+}
+.describe {
+  background-color: red;
+  margin:5px;
+  padding: 5px;
+}
