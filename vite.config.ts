@@ -7,9 +7,17 @@ import vueDevTools from 'vite-plugin-vue-devtools'
 
 // https://vite.dev/config/
 export default defineConfig({
-  base: process.env.NODE_ENV === 'production'
-    ? '/baijuyibuyiju.github.io/'   // 仓库名称
-    : '/',
+  base: '/', // 确保这是正确的仓库路径
+  build: {
+    // 添加这些配置解决 MIME 类型问题
+    rollupOptions: {
+      output: {
+        entryFileNames: `assets/[name].js`,
+        chunkFileNames: `assets/[name].js`,
+        assetFileNames: `assets/[name].[ext]`
+      }
+    }
+  },
   plugins: [
     vue(),
     vueJsx(),

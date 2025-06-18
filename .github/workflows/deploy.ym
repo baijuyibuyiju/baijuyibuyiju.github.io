@@ -8,8 +8,7 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
+      - uses: actions/checkout@v3
 
       - name: Setup Node
         uses: actions/setup-node@v3
@@ -19,6 +18,7 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      # 确保使用正确的构建命令
       - name: Build project
         run: npm run build
 
